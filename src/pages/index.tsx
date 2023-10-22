@@ -12,7 +12,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-school flex h-72 items-center justify-center bg-white ">
+      <div className="flex h-72 items-center justify-center bg-white bg-school ">
         <h1 className="mb-8 mt-6 rounded-xl bg-slate-100/60 p-4 text-center font-sans text-8xl font-extrabold drop-shadow-md max-md:text-4xl">
           School, Done{" "}
           <span className="font-extrabold italic text-ourBlue">Our</span> Way
@@ -22,11 +22,11 @@ export default function Home() {
       <hr className="align-center m-auto w-4/5 "></hr>
 
       <div className="flex w-full justify-center p-8">
-        <button className=" rounded-md bg-ourBlue p-4 text-3xl text-white hover:bg-blue-200 hover:text-white active:text-black max-md:text-xl">
-          <Link href="/study">
+        <Link href="/study">
+          <button className=" rounded-md bg-ourBlue p-4 text-3xl text-white hover:bg-blue-200 hover:text-white active:text-black max-md:text-xl">
             Start your Revolutionary Study Session (Click Here)
-          </Link>
-        </button>
+          </button>
+        </Link>
       </div>
 
       <hr className="align-center m-auto w-4/5 "></hr>
