@@ -280,7 +280,7 @@ export default function Study() {
       <main className="bg-sky bg-black">
         <audio id="backtrack" autoPlay></audio>
         <button
-          className="p-3"
+          className="rounded-br-md bg-slate-100/40 p-3"
           onClick={(e) => {
             if (typeof document !== "undefined") {
               let audioElement0 = document.getElementById("backtrack");
@@ -291,7 +291,7 @@ export default function Study() {
             }
           }}
         >
-          Disable Audio
+          Disable Music
         </button>
         <button
           className="fixed right-4 top-4 z-10 rounded-md bg-bone p-2 text-ourBlue drop-shadow-md hover:bg-white active:text-black"
@@ -304,7 +304,6 @@ export default function Study() {
         <h1 className="p-12 text-center text-9xl font-bold text-green-500 drop-shadow-md max-md:text-6xl max-sm:text-3xl">
           <span className="font-extrabold">RPG</span>enius
         </h1>
-
         <div className="flex items-center justify-center gap-24 max-md:gap-4 max-sm:block">
           <div className=" flex justify-center py-24 max-sm:py-6">
             <div>
@@ -566,7 +565,6 @@ export default function Study() {
             </div>
           </div>
         </div>
-
         <div className="p-8 text-center text-6xl">Shop</div>
         <div className="m-auto flex w-3/4 flex-wrap justify-center gap-8 font-bold">
           <button
@@ -783,12 +781,10 @@ export default function Study() {
             </button>
           )}
         </div>
-
         <div className="pt-16">
           <div className="bg-green-100/20 p-8 text-center text-7xl font-bold">
             Self Quiz
           </div>
-
           {!review ? (
             <div className="w-full pt-3">
               <div className="flex bg-green-100/20 pb-20 pt-20 max-lg:flex-col">
