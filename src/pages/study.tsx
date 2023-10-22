@@ -4,11 +4,13 @@ import React from "react";
 import jsPDF from "jspdf";
 import Link from "next/link";
 
+// Quiz Global Variables
 let questions = [""];
 let answers = [""];
 let index = 0;
 let coinsTemp = 0;
 
+// Shop Global Variables
 let stardew = false;
 let lofi = false;
 let lofi2 = false;
@@ -17,12 +19,12 @@ let forest = false;
 let space = false;
 let home = false;
 
+// Complete functional component
 export default function Study() {
+  // Creating react useStates
   const [level, setLevel] = useState(0);
   const [coins, setCoins] = useState(0);
-  const [quizMode, setQuizMode] = useState(true);
   const [characterImg, setCharacterImg] = useState("base.gif");
-  const [bar, setBar] = useState("h-4 w-[1px] rounded-sm bg-green-300");
   const [showSprites, setShowSprites] = useState(false);
   const [mp3URL, setMp3URL] = useState("/underture.mp3");
   const [name, setName] = useState("Junior");
@@ -41,6 +43,7 @@ export default function Study() {
   const [review, setReview] = useState(false);
   const [qMode, setQMode] = useState(true);
 
+  // Handling the question and answer input from quiz section
   const handleQ = (event: any) => {
     setQuestion(event.target.value);
   };
@@ -49,6 +52,7 @@ export default function Study() {
     setAnswer(event.target.value);
   };
 
+  // Handling the change in music
   const handleMusic = (url: any) => {
     if (typeof document !== "undefined") {
       let audioElement0 = document.getElementById("backtrack");
@@ -61,6 +65,7 @@ export default function Study() {
     }
   };
 
+  // Handling submit of time
   const handleSubmit = () => {
     handleMusic(mp3URL);
     const timerInterval = setInterval(changeTime, 1000);
@@ -84,6 +89,7 @@ export default function Study() {
               if (
                 levelTemp == 3 ||
                 levelTemp == 5 ||
+                levelTemp == 7 ||
                 levelTemp == 8 ||
                 levelTemp == 10 ||
                 levelTemp == 15 ||
@@ -111,6 +117,8 @@ export default function Study() {
         }
       }
     }
+
+    // Changing the time on the clock incrementally
     function changeTime() {
       number++;
       let stringNum = convertSeconds(number);
@@ -118,12 +126,13 @@ export default function Study() {
       move();
       if (number % 10 == 0) {
         console.log(coinsTemp);
-        coinsTemp = coinsTemp + 80; //CHANGE
+        coinsTemp = coinsTemp + 80; //Changeable value to make points rise faster
         setCoins(coinsTemp);
       }
     }
   };
 
+  // Method to convert the number of seconds to a formatted time
   function convertSeconds(seconds: number) {
     let hours = Math.floor(seconds / 3600);
     let minutes = Math.floor(seconds / 60);
@@ -137,6 +146,7 @@ export default function Study() {
     return formatted;
   }
 
+  // Function to handle the quiz submission
   function handleQuizSubmit() {
     answers.push(answer);
     questions.push(question);
@@ -147,6 +157,7 @@ export default function Study() {
     console.log(answers.length);
   }
 
+  // Function to handle the review mode of the quiz
   function handleReview() {
     setReview(!review);
     questions.shift();
@@ -160,6 +171,7 @@ export default function Study() {
     setQMode(false);
   }
 
+  // Function to check the next card and show it to the user
   function handleNext() {
     if (index < answers.length - 1) {
       index++;
@@ -183,6 +195,7 @@ export default function Study() {
     }
   }
 
+  // Method to shuffle an array with both arrays being shuffled equally so as to keep the dictionary-like behaviour
   function shuffle(obj1: any, obj2: any) {
     let index = obj1.length;
     let rnd, tmp1, tmp2;
@@ -199,6 +212,7 @@ export default function Study() {
     }
   }
 
+  // Function to end the session and jspdf
   function endSession() {
     let doc = new jsPDF({
       orientation: "landscape",
@@ -280,15 +294,15 @@ export default function Study() {
           Disable Audio
         </button>
         <button
-          className="fixed right-4 top-4 rounded-md bg-bone p-2 text-ourBlue drop-shadow-md hover:bg-white active:text-black"
+          className="fixed right-4 top-4 z-10 rounded-md bg-bone p-2 text-ourBlue drop-shadow-md hover:bg-white active:text-black"
           onClick={(e) => {
             endSession();
           }}
         >
           End Session
         </button>
-        <h1 className="p-12 text-center text-9xl font-bold text-green-500 drop-shadow-md max-md:text-6xl">
-          RPGenius
+        <h1 className="p-12 text-center text-9xl font-bold text-green-500 drop-shadow-md max-md:text-6xl max-sm:text-3xl">
+          <span className="font-extrabold">RPG</span>enius
         </h1>
 
         <div className="flex items-center justify-center gap-24 max-md:gap-4 max-sm:block">
@@ -329,11 +343,15 @@ export default function Study() {
               <div id="myProgress">
                 <div id="myBar"></div>
               </div>
-              <div>Coins: {coins}</div>
+              <div className="flex items-center">
+                <div>Coins: {coins}</div>
+                <img src="coin.gif" className="w-1/6"></img>
+              </div>
+
               <div className="flex">
                 <section className="">
                   <div id="timer-elem" className="text-1xl font-bold">
-                    Study Time: {timer}
+                    Study Time: <span className="text-red-300">{timer}</span>
                   </div>
                   {onWork ? (
                     <div>
@@ -415,6 +433,22 @@ export default function Study() {
                 <img
                   className="h-48 w-44 max-md:h-12 max-md:w-12 "
                   src="helmet.gif"
+                ></img>
+              </a>
+              <a
+                onClick={(e) => {
+                  setCharacterImg("dog.gif");
+                  if (typeof document !== "undefined") {
+                    const audioElement0 = document.createElement("audio");
+                    audioElement0.setAttribute("src", "select.mp3");
+                    audioElement0.play();
+                  }
+                }}
+                className={level > 6 ? "show" : "hidden"}
+              >
+                <img
+                  className="h-48 w-44 max-md:h-12 max-md:w-12 "
+                  src="dog.gif"
                 ></img>
               </a>
               <a

@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+// Basic function home landing page component
 export default function Home() {
   return (
     <main>
@@ -11,9 +12,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-white">
-        <h1 className="mb-8 mt-6 pt-10 text-center font-sans text-8xl drop-shadow-md max-md:text-4xl">
-          School, Done <span className="italic text-ourBlue">Our</span> Way
+      <div className="bg-school flex h-72 items-center justify-center bg-white ">
+        <h1 className="mb-8 mt-6 rounded-xl bg-slate-100/60 p-4 text-center font-sans text-8xl font-extrabold drop-shadow-md max-md:text-4xl">
+          School, Done{" "}
+          <span className="font-extrabold italic text-ourBlue">Our</span> Way
         </h1>
       </div>
 
@@ -26,6 +28,35 @@ export default function Home() {
           </Link>
         </button>
       </div>
+
+      <hr className="align-center m-auto w-4/5 "></hr>
+
+      <div className="m-24 max-md:m-6">
+        <div className="align-center m-auto w-1/2 justify-center rounded-3xl border-none bg-beige p-8 max-md:w-full max-md:p-3">
+          <img src="" alt="" />
+          <h1 className="text-center font-sans text-6xl max-md:text-3xl">
+            How RPGenius Works
+          </h1>
+          <p className="p-8 text-xl max-md:text-sm">
+            RPGenius is a web application for students, young and old, to
+            embrace the fun side of learning by hacking their brain using
+            gamification! Although simple, gamification is a powerful tool that
+            aids people in feeling inspired and motivated. With the aid of our
+            Juniors (our special critters), students can strive to spend more
+            time focused on their tasks and studying for the sake of unlocking
+            other Juniors and buying fun gifts from the store. Just like
+            Duolingo and IXL, students are much more strongly motivated to learn
+            and focus with even small incentives. We hope that with this fun
+            minimalistic application, students will gain to benefit a lot!
+          </p>
+          <div className="flex flex-wrap">
+            <img src="base.gif"></img>
+            <img src="dog.gif"></img>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-32 h-20 w-full bg-ourBlue"></div>
 
       <hr className="align-center m-auto w-4/5 "></hr>
 

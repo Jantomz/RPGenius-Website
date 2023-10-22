@@ -23,6 +23,7 @@ export default {
         forest: "url('../../public/forest.png')",
         home: "url('../../public/home.png')",
         sky: "url('../../public/sky.jpg')",
+        school: "url('../../public/school.jpg')",
       },
     },
   },
