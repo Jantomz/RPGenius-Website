@@ -212,22 +212,43 @@ export default function Study() {
       doc.addImage(imgData, "JPEG", 4, 3, 4, 4);
     }
 
+    doc.setFont("times");
+    doc.setTextColor(255, 0, 0);
     doc.setFontSize(30);
-    doc.text("This Certificate from RPGenius is Presented", 6, 0.5, {
-      align: "center",
-    });
-    doc.text("to " + name + " and you!", 6, 1, {
+    doc.text("This Certificate from RPGenius is Presented to", 6, 1, {
       align: "center",
     });
 
-    doc.text(name + " and I studied for " + timer + "!", 6, 1.5, {
+    doc.setTextColor(133, 0, 0);
+    doc.setFont("times", "bold");
+
+    doc.text(name + " and You!", 6, 1.5, {
       align: "center",
     });
-    doc.text("We got " + coins + " coins and got to level " + level, 6, 2, {
+
+    doc.setFont("times", "normal");
+
+    doc.setTextColor(0, 0, 0);
+
+    doc.setFontSize(10);
+
+    doc.setLineWidth(0.01);
+
+    doc.line(4, 1.7, 8, 1.7, "S");
+
+    doc.text(" You and " + name + " studied for " + timer + "!", 6, 2, {
       align: "center",
     });
-    doc.setFontSize(20);
-    doc.text("This is one of " + name + "'s favourite outfits!", 6, 2.5, {
+    doc.text("You got " + coins + " coins and got to level " + level, 6, 2.2, {
+      align: "center",
+    });
+    doc.setFontSize(16);
+    doc.text("This is one of " + name + "'s favourite outfits!", 6, 2.8, {
+      align: "center",
+    });
+
+    doc.setFontSize(10);
+    doc.text("\u00A9RPGenius", 11, 7.5, {
       align: "center",
     });
 
