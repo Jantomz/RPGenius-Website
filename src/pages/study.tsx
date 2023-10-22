@@ -102,7 +102,7 @@ export default function Study() {
               }
               setLevel(levelTemp);
             } else {
-              width = width + 0.05 / (levelTemp * 0.3 + 1);
+              width = width + 0.05 / (levelTemp * 0.1 + 1);
               if (elem != null) {
                 elem.style.width = width + "%";
               }
@@ -266,21 +266,23 @@ export default function Study() {
         >
           End Session
         </button>
-        <h1 className="p-12 text-center text-9xl font-bold text-green-500 drop-shadow-md">
+        <h1 className="p-12 text-center text-9xl font-bold text-green-500 drop-shadow-md max-md:text-6xl">
           RPGenius
         </h1>
 
-        <div className="flex items-center justify-center gap-24">
-          <div className=" flex justify-center py-24">
+        <div className="flex items-center justify-center gap-24 max-md:gap-4 max-sm:block">
+          <div className=" flex justify-center py-24 max-sm:py-6">
             <div>
               <div className="flex justify-center">
                 {officiate ? (
-                  <div className="border-b-2 text-2xl font-bold">{name}</div>
+                  <div className="border-b-2 text-2xl font-bold max-lg:text-sm">
+                    {name}
+                  </div>
                 ) : (
-                  <div>
+                  <div className="max-xl:flex max-xl:flex-col max-xl:justify-center">
                     <input
                       placeholder="Junior"
-                      className="w-1/3 border-b-2 bg-transparent text-center text-xl"
+                      className="w-1/3 border-b-2 bg-transparent text-center text-xl max-xl:m-auto max-xl:w-1/2 max-md:text-sm"
                       value={name}
                       onChange={(e) => {
                         setName(e.target.value);
@@ -301,7 +303,7 @@ export default function Study() {
                 <img src={characterImg} className="w-96"></img>
               </div>
             </div>
-            <div className="flex flex-col justify-center gap-8 text-3xl font-bold">
+            <div className="flex flex-col justify-center gap-8 text-3xl font-bold max-md:p-4 max-md:text-xl">
               <div>Level: {level}</div>
               <div id="myProgress">
                 <div id="myBar"></div>
@@ -320,7 +322,7 @@ export default function Study() {
 
                       <button
                         onClick={handleSubmit}
-                        className="fixed left-1/2 top-1/2 z-0 h-full w-full -translate-x-2/4 -translate-y-2/4 rounded-sm bg-green-200/80 text-9xl font-bold hover:bg-green-300/90 active:bg-green-900/40"
+                        className="fixed left-1/2 top-1/2 z-0 h-full w-full -translate-x-2/4 -translate-y-2/4 rounded-sm bg-green-200/80 text-9xl font-bold hover:bg-green-300/90 active:bg-green-900/40 max-md:text-6xl"
                       >
                         Click to Start Study Session
                       </button>
@@ -332,7 +334,7 @@ export default function Study() {
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-center justify-center gap-4 bg-base">
+          <div className="flex flex-col items-center justify-center gap-4 bg-base max-lg:m-4">
             <button
               className="w-full rounded-md bg-bone p-2 text-center text-2xl font-bold hover:bg-beige active:bg-white"
               onClick={(e) => setShowSprites(!showSprites)}
@@ -342,7 +344,7 @@ export default function Study() {
             <div
               className={
                 showSprites
-                  ? "min-w-72 flex max-h-80 flex-wrap justify-center overflow-auto p-24"
+                  ? "min-w-72 flex max-h-80 flex-wrap justify-center overflow-auto p-24 max-md:p-6"
                   : "hidden"
               }
             >
@@ -357,7 +359,10 @@ export default function Study() {
                 }}
                 className={level >= 0 ? "show" : "hidden"}
               >
-                <img className="h-48 w-44" src="base.gif"></img>
+                <img
+                  className="h-48 w-44  max-md:h-12 max-md:w-12"
+                  src="base.gif"
+                ></img>
               </a>
               <a
                 onClick={(e) => {
@@ -370,7 +375,10 @@ export default function Study() {
                 }}
                 className={level > 2 ? "show" : "hidden"}
               >
-                <img className="h-48 w-44" src="koala.gif"></img>
+                <img
+                  className="h-48 w-44 max-md:h-12 max-md:w-12"
+                  src="koala.gif"
+                ></img>
               </a>
               <a
                 onClick={(e) => {
@@ -383,7 +391,10 @@ export default function Study() {
                 }}
                 className={level > 4 ? "show" : "hidden"}
               >
-                <img className="h-48 w-44 " src="helmet.gif"></img>
+                <img
+                  className="h-48 w-44 max-md:h-12 max-md:w-12 "
+                  src="helmet.gif"
+                ></img>
               </a>
               <a
                 onClick={(e) => {
@@ -396,7 +407,10 @@ export default function Study() {
                 }}
                 className={level > 7 ? "show" : "hidden"}
               >
-                <img className="h-48 w-44 " src="tophat.gif"></img>
+                <img
+                  className="h-48 w-44 max-md:h-12 max-md:w-12 "
+                  src="tophat.gif"
+                ></img>
               </a>
               <a
                 onClick={(e) => {
@@ -409,7 +423,10 @@ export default function Study() {
                 }}
                 className={level > 9 ? "show" : "hidden"}
               >
-                <img className="h-48 w-44 " src="buckethat.gif"></img>
+                <img
+                  className="h-48 w-44 max-md:h-12 max-md:w-12 "
+                  src="buckethat.gif"
+                ></img>
               </a>
               <a
                 onClick={(e) => {
@@ -422,7 +439,10 @@ export default function Study() {
                 }}
                 className={level > 14 ? "show" : "hidden"}
               >
-                <img className="h-48 w-44 " src="blood.gif"></img>
+                <img
+                  className="h-48 w-44 max-md:h-12 max-md:w-12 "
+                  src="blood.gif"
+                ></img>
               </a>
               <a
                 onClick={(e) => {
@@ -435,7 +455,10 @@ export default function Study() {
                 }}
                 className={level > 19 ? "show" : "hidden"}
               >
-                <img className="h-48 w-44 " src="beard.gif"></img>
+                <img
+                  className="h-48 w-44 max-md:h-12 max-md:w-12 "
+                  src="beard.gif"
+                ></img>
               </a>
               <a
                 onClick={(e) => {
@@ -448,7 +471,10 @@ export default function Study() {
                 }}
                 className={level > 29 ? "show" : "hidden"}
               >
-                <img className="h-48 w-44 " src="knight.gif"></img>
+                <img
+                  className="h-48 w-44 max-md:h-12 max-md:w-12 "
+                  src="knight.gif"
+                ></img>
               </a>
               <a
                 onClick={(e) => {
@@ -461,7 +487,10 @@ export default function Study() {
                 }}
                 className={level > 39 ? "show" : "hidden"}
               >
-                <img className="h-48 w-44 " src="ghost.gif"></img>
+                <img
+                  className="h-48 w-44 max-md:h-12 max-md:w-12 "
+                  src="ghost.gif"
+                ></img>
               </a>
               <a
                 onClick={(e) => {
@@ -474,7 +503,10 @@ export default function Study() {
                 }}
                 className={level > 49 ? "show" : "hidden"}
               >
-                <img className="h-48 w-44 " src="spooky.gif"></img>
+                <img
+                  className="h-48 w-44 max-md:h-12 max-md:w-12 "
+                  src="spooky.gif"
+                ></img>
               </a>
             </div>
           </div>
@@ -483,7 +515,7 @@ export default function Study() {
         <div className="p-8 text-center text-6xl">Shop</div>
         <div className="m-auto flex w-3/4 flex-wrap justify-center gap-8 font-bold">
           <button
-            className="rounded-md bg-green-200 p-2 drop-shadow-md"
+            className="rounded-md bg-green-200 p-2"
             onClick={(e) => {
               handleMusic("underture.mp3");
               if (typeof document !== "undefined") {
@@ -497,7 +529,7 @@ export default function Study() {
           </button>
           {stardew ? (
             <button
-              className="rounded-md bg-green-200 p-2 drop-shadow-md"
+              className="rounded-md bg-green-200 p-2"
               onClick={(e) => {
                 if (typeof document !== "undefined") {
                   const audioElement0 = document.createElement("audio");
@@ -511,7 +543,7 @@ export default function Study() {
             </button>
           ) : (
             <button
-              className="rounded-md bg-beige p-2 drop-shadow-md"
+              className="rounded-md bg-beige p-2"
               onClick={(e) => {
                 if (coins >= 800) {
                   handleMusic("stardewremix.mp3");
@@ -527,7 +559,7 @@ export default function Study() {
 
           {lofi ? (
             <button
-              className="rounded-md bg-green-200 p-2 drop-shadow-md"
+              className="rounded-md bg-green-200 p-2"
               onClick={(e) => {
                 if (typeof document !== "undefined") {
                   const audioElement0 = document.createElement("audio");
@@ -541,7 +573,7 @@ export default function Study() {
             </button>
           ) : (
             <button
-              className="rounded-md bg-beige p-2 drop-shadow-md"
+              className="rounded-md bg-beige p-2"
               onClick={(e) => {
                 if (coins >= 1000) {
                   handleMusic("lofi.mp3");
@@ -556,7 +588,7 @@ export default function Study() {
           )}
           {lofi2 ? (
             <button
-              className="rounded-md bg-green-200 p-2 drop-shadow-md"
+              className="rounded-md bg-green-200 p-2"
               onClick={(e) => {
                 if (typeof document !== "undefined") {
                   const audioElement0 = document.createElement("audio");
@@ -570,7 +602,7 @@ export default function Study() {
             </button>
           ) : (
             <button
-              className="rounded-md bg-beige p-2 drop-shadow-md"
+              className="rounded-md bg-beige p-2 "
               onClick={(e) => {
                 if (coins >= 1000) {
                   handleMusic("lofi2.mp3");
@@ -585,7 +617,7 @@ export default function Study() {
           )}
           {beach ? (
             <button
-              className="rounded-md bg-green-200 p-2 drop-shadow-md"
+              className="rounded-md bg-green-200 p-2"
               onClick={(e) => {
                 setMainBg(
                   "bg-beach no-repeat bg-center bg-origin-border m-8 bg-cover",
@@ -596,7 +628,7 @@ export default function Study() {
             </button>
           ) : (
             <button
-              className="rounded-md bg-beige p-2 drop-shadow-md"
+              className="rounded-md bg-beige p-2"
               onClick={(e) => {
                 if (coins >= 1000) {
                   setMainBg(
@@ -613,7 +645,7 @@ export default function Study() {
           )}
           {space ? (
             <button
-              className="rounded-md bg-green-200 p-2 drop-shadow-md"
+              className="rounded-md bg-green-200 p-2"
               onClick={(e) => {
                 setMainBg(
                   "bg-space no-repeat bg-center bg-origin-border m-8 bg-cover",
@@ -624,7 +656,7 @@ export default function Study() {
             </button>
           ) : (
             <button
-              className="rounded-md bg-beige p-2 drop-shadow-md"
+              className="rounded-md bg-beige p-2"
               onClick={(e) => {
                 if (coins >= 1000) {
                   setMainBg(
@@ -641,7 +673,7 @@ export default function Study() {
           )}
           {forest ? (
             <button
-              className="rounded-md bg-green-200 p-2 drop-shadow-md"
+              className="rounded-md bg-green-200 p-2"
               onClick={(e) => {
                 setMainBg(
                   "bg-forest no-repeat bg-center bg-origin-border m-8 bg-cover",
@@ -652,7 +684,7 @@ export default function Study() {
             </button>
           ) : (
             <button
-              className="rounded-md bg-beige p-2 drop-shadow-md"
+              className="rounded-md bg-beige p-2 "
               onClick={(e) => {
                 if (coins >= 1000) {
                   setMainBg(
@@ -669,7 +701,7 @@ export default function Study() {
           )}
           {home ? (
             <button
-              className="rounded-md bg-green-200 p-2 drop-shadow-md"
+              className="rounded-md bg-green-200 p-2 "
               onClick={(e) => {
                 setMainBg(
                   "bg-home no-repeat bg-center bg-origin-border m-8 bg-cover",
@@ -680,7 +712,7 @@ export default function Study() {
             </button>
           ) : (
             <button
-              className="rounded-md bg-beige p-2 drop-shadow-md"
+              className="rounded-md bg-beige p-2 "
               onClick={(e) => {
                 if (coins >= 1000) {
                   setMainBg(
