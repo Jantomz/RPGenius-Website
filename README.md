@@ -1,28 +1,7 @@
-# Create T3 App
+# NightHacks 2024 Popular Vote Winning Hack - RPGenius
+
+[DevPost](https://devpost.com/software/rpgenius)
+
+RPGenius enables its users to study in a more rewarding and effective way. It combines aspects from role-playing games and the progression levels that they provide along with an emphasis on studying. Through the RPGenius in-game progression model students are heavily encouraged to study more to get more rewards. The way this works is that with RPGenius user’s gain experience levels and coins over time. At a certain threshold once the user has reached a certain experience level they level up while user’s gain coins every ten seconds. With coins user’s can purchase different backgrounds for their in-game character and study music. Furthermore, with certain levels being achieved user’s gain access to different skins. Both of these accessories/vanity items encourage students to study more. Furthermore, there is a quiz feature at the bottom of the page which allows users to make their own test question study sets. Once a user has performed a test that they have created they get additional coins.
 
 This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
-
-## What's next? How do I make an app with this?
-
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
-
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
-
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
-
-## Learn More
-
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
-
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
-
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
